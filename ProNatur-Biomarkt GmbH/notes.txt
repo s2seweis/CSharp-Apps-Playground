@@ -1,0 +1,339 @@
+***Windows Forms versus WPF           
+
+1. Windows Forms
+Windows Forms ist die ältere der beiden Technologien und wurde mit .NET eingeführt. Es bietet eine einfache, schnelle Möglichkeit zur Erstellung von Desktop-Anwendungen, hat jedoch einige Einschränkungen, insbesondere bei modernen, anspruchsvollen Benutzeroberflächen.
+
+=> Erst Windows Form für die Grundlagen, danach PWF
+
+2. WPF (Windows Presentation Foundation)
+WPF ist eine neuere Technologie, die mit .NET Framework 3.0 eingeführt wurde. Sie ist auf die Entwicklung moderner, flexibler und grafisch ansprechender Benutzeroberflächen ausgerichtet. WPF verwendet eine deklarative Sprache (XAML) zur Gestaltung der UI und bietet viele fortschrittliche Funktionen.
+
+In WPF wird statt HTML das XAML (eXtensible Application Markup Language) verwendet. XAML ist eine deklarative Markup-Sprache, die ähnlich wie HTML zur Beschreibung der Benutzeroberfläche dient. Sie wird verwendet, um das Layout, die Steuerungselemente und andere visuelle Aspekte der Anwendung zu definieren, ähnlich wie HTML das Layout einer Webseite beschreibt.
+
+***Kommentar:***
+
+Oberste Anwendungsschicht/ Window
+Eigenschaftsfenster:
+Start Position: CenterScreen
+Text: Pronatur-Biomarkt GmbH
+
+// Normalerweise immer den CamelCase
+
+// Windows hat sich entschieden, die Standard Notierung zu verändern, wenn es um die Events aus de UI geht
+// Hinweis: Extras => Optionen => Windows Form-Designer => Große Anfangsbuchstaben für Ereignishandler und Methoden => False to True, zum deaktivieren
+
+=>In Windows Forms alle Elemente können Events haben
+=>Du kannst alle Elemente im Code über den Namen ansprechen
+
+In der Softwareentwicklung, insbesondere bei der Verwendung von Entwicklungsumgebungen wie Visual Studio, gibt es einige grundlegende Begriffe, die wichtig sind, um das Projektmanagement zu verstehen. Hier ist eine Erklärung der Begriffe „Projektmappe“ und „Projekt“:
+
+### Projektmappe (Solution)
+
+- **Definition**: Eine **Projektmappe** (oder **Solution**) ist ein Container, der ein oder mehrere Projekte zusammenfasst. Sie stellt eine übergeordnete Struktur dar, in der die Projekte organisiert sind.
+- **Zweck**: Die Projektmappe ermöglicht es Entwicklern, verschiedene Projekte zu gruppieren, die zusammenarbeiten oder miteinander verbunden sind. Zum Beispiel könnte eine Projektmappe eine Webanwendung, eine Datenbank und eine mobile App enthalten, die alle Teil eines größeren Systems sind.
+- **Dateiformat**: In Visual Studio wird eine Projektmappe in einer Datei mit der Endung `.sln` gespeichert.
+
+### Projekt
+
+- **Definition**: Ein **Projekt** ist eine Sammlung von Dateien und Ressourcen, die zusammen eine spezifische Anwendung oder Funktionalität implementieren. Jedes Projekt kann Quellcode, Konfigurationsdateien, Bibliotheken, Ressourcen wie Bilder und Icons und mehr enthalten.
+- **Zweck**: Ein Projekt konzentriert sich auf eine bestimmte Aufgabe oder Funktionalität innerhalb der Projektmappe. Zum Beispiel könnte ein Projekt eine Webanwendung sein, während ein anderes Projekt eine Datenzugriffsschicht oder eine API bereitstellt.
+- **Dateiformat**: Jedes Projekt hat in der Regel seine eigene Projektdatei, die in Visual Studio unterschiedliche Dateiendungen haben kann, z.B. `.csproj` für C#-Projekte oder `.vbproj` für Visual Basic-Projekte.
+
+### Zusammenfassung
+
+- Eine **Projektmappe** ist der übergeordnete Container für mehrere **Projekte**.
+- Innerhalb einer **Projektmappe** können verschiedene **Projekte** organisiert werden, die zusammenarbeiten und gemeinsame Ressourcen nutzen.
+- Dies ermöglicht eine strukturierte und effiziente Entwicklung komplexer Anwendungen, indem verschiedene Teile der Anwendung in separaten Projekten behandelt werden.
+
+### Beispiel
+
+Stellen Sie sich vor, Sie entwickeln eine Webanwendung. Ihre Projektmappe könnte folgende Projekte enthalten:
+
+1. **Webanwendung**: Das Hauptprojekt, das die Benutzeroberfläche und die Logik für die Webanwendung enthält.
+2. **Datenbankprojekt**: Ein Projekt, das die Datenbankstruktur und -abfragen verwaltet.
+3. **API-Projekt**: Ein Projekt, das eine Schnittstelle für externe Systeme bereitstellt.
+
+Durch die Verwendung von Projektmappen können Sie diese verschiedenen Projekte effizient verwalten und deren Interaktion erleichtern. Wenn Sie weitere Fragen dazu haben oder mehr Details benötigen, lassen Sie es mich wissen!
+
+***Git (Versionskontrolle)***
+
+Wenn man einen Fehler in seinen Code gepackt hat und dadurch die Anwendung nicht mehr läuft, 
+kann man mit der Versionskontrolle zu einem früheren Zeitpunkt deines Codes zurück springen
+
+=> Elemente zu einem Projekt hinzufügen möchtest dann geht es über => nicht über Projektmappe, 
+sondern über das Projekt: "ProNatur-Biomarkt GmbG"
+
+#Code Revision?
+
+Eine Code-Revision mit Git bezieht sich auf den Prozess der Überprüfung und Bearbeitung von Codeänderungen, die in einem Git-Repository gespeichert sind. Dieser Prozess umfasst mehrere Schritte und Konzepte:
+
+1. Versionierung
+Git ermöglicht es, verschiedene Versionen eines Projekts zu speichern. Jede Änderung, die du am Code vornimmst und committest, wird als Revision betrachtet. Dies bedeutet, dass du jederzeit zu früheren Versionen zurückkehren kannst, falls nötig.
+
+2. Commit
+Ein Commit in Git ist ein Schnappschuss des aktuellen Zustands des Repositories zu einem bestimmten Zeitpunkt. Jeder Commit enthält:
+
+Eine eindeutige ID (SHA-Hash)
+Die commit-Nachricht, die beschreibt, was geändert wurde
+Informationen über die Authoren und den Zeitstempel
+3. Branching
+Mit Git kannst du Branches erstellen, um verschiedene Entwicklungsstränge zu verwalten. Zum Beispiel kannst du einen Branch für neue Features oder Bugfixes erstellen. Dies ermöglicht parallele Entwicklungen, ohne den Hauptentwicklungsstrang (häufig als main oder master bezeichnet) zu stören.
+
+4. Merge und Pull Requests
+Um Änderungen von einem Branch in einen anderen zu integrieren, wird der Merge-Prozess verwendet. Bei der Arbeit in Teams ist es üblich, Pull Requests (oder Merge Requests) zu erstellen. Das ist ein formeller Prozess, bei dem Teammitglieder die Änderungen überprüfen und diskutieren können, bevor sie in den Hauptbranch integriert werden.
+
+5. Code Review
+Eine Code-Revision beinhaltet oft eine formelle Überprüfung des Codes durch andere Entwickler. Diese Reviews helfen, Fehler zu finden, die Codequalität zu verbessern und sicherzustellen, dass die Änderungen den Standards des Projekts entsprechen.
+
+6. Revisionskontrolle
+Git ermöglicht es dir, die gesamte Historie der Änderungen im Projekt zu verfolgen. Du kannst:
+
+Die Änderungen zwischen verschiedenen Commits vergleichen (git diff)
+Die Historie der Commits anzeigen (git log)
+Änderungen zurücksetzen oder ändern (git revert, git reset)
+Zusammenfassung
+Eine Code-Revision mit Git ist also der gesamte Prozess der Verwaltung und Überprüfung von Codeänderungen, einschließlich der Erstellung von Commits, der Arbeit mit Branches, der Durchführung von Merges und der Durchführung von Code-Reviews. Dieser Prozess hilft, die Qualität des Codes zu gewährleisten und ermöglicht eine effiziente Zusammenarbeit im Team. 
+
+Here’s a structured and clearer presentation of the Git commands and workflow you provided:
+
+---
+
+## Git Befehle
+
+### 1. **Branch-Verwaltung**
+
+- **Alle Branches anzeigen:**
+  ```bash
+  git branch
+  ```
+
+- **Neuen Branch erstellen:**
+  ```bash
+  git branch <branch name>
+  ```
+
+- **Zu einem Branch wechseln:**
+  ```bash
+  git checkout <branch name>
+  ```
+
+### 2. **Änderungen auf den Remote-Server übertragen**
+
+Wenn der Branch nur lokal existiert, um Ihre Änderungen von dem lokalen Branch auf das Remote-Repository zu pushen:
+```bash
+git push --set-upstream origin <branch name>
+```
+
+### 3. **Zusammenführen des Guest-Branches in den Master-Branch**
+
+#### Schritte zum Mergen:
+
+1. **Zurück zum Master-Branch wechseln:**
+   ```bash
+   git checkout master
+   ```
+
+2. **Master-Branch aktualisieren:**
+   ```bash
+   git pull origin master
+   ```
+
+3. **Guest-Branch in den Master-Branch mergen:**
+   ```bash
+   git merge guest
+   ```
+
+4. **Änderungen zum Remote-Repository pushen:**
+   ```bash
+   git push origin master
+   ```
+
+### 4. **Hinweis zum Mergen**
+
+Wenn Sie den Guest-Branch in den Master-Branch mergen, werden die Änderungen, die im Guest-Branch vorgenommen wurden, in Ihren lokalen Master-Branch integriert. Diese Änderungen sind jedoch nur in Ihrem lokalen Repository sichtbar, bis Sie sie auf das Remote-Repository pushen.
+
+---
+
+This structured format breaks down the commands into clear sections, making it easier to understand and follow the workflow. Let me know if you need any further adjustments!
+
+Um über die Konsole eine ältere Version (einen älteren Commit) in Git wiederherzustellen, gibt es verschiedene Methoden, abhängig davon, ob du nur die Dateien zurücksetzen oder auch den Verlauf ändern möchtest. Hier sind die gängigsten Methoden:
+
+### 1. **Checkout eines älteren Commits** 
+
+Wenn du nur die Dateien im Arbeitsverzeichnis auf den Zustand eines älteren Commits zurücksetzen möchtest, ohne den Verlauf zu ändern:
+
+1. **Finde die Commit-ID**:
+   Verwende den Befehl, um die Commit-Historie anzuzeigen und die Commit-ID des gewünschten älteren Commits zu finden:
+   ```bash
+   git log --oneline
+   ```
+
+2. **Checkout des älteren Commits**:
+   Verwende die Commit-ID, um zu diesem Commit zu wechseln:
+   ```bash
+   git checkout <commit-id>
+   ```
+
+   *Hinweis*: Dies versetzt dich in einen "Detached HEAD"-Zustand. Das bedeutet, dass du nicht auf einem Branch bist und Änderungen, die du in diesem Zustand vornimmst, nicht automatisch einem Branch zugeordnet werden.
+
+### 2. **Zurücksetzen des Branches auf einen älteren Commit**
+
+Wenn du den aktuellen Branch auf einen bestimmten Commit zurücksetzen und die Änderungen nach diesem Commit verwerfen möchtest:
+
+1. **Finde die Commit-ID** (wie oben beschrieben).
+
+2. **Setze den Branch zurück**:
+   ```bash
+   git reset --hard <commit-id>
+   ```
+
+   *Achtung*: Dies verwirft alle Änderungen, die nach diesem Commit gemacht wurden, und kann nicht rückgängig gemacht werden, wenn die Änderungen nicht vorher gesichert wurden.
+
+### 3. **Revert eines Commits**
+
+Wenn du einen bestimmten Commit rückgängig machen und die Änderungen beibehalten möchtest (d.h. einen neuen Commit erstellen, der die Änderungen des älteren Commits aufhebt):
+
+1. **Finde die Commit-ID**.
+
+2. **Führe den Revert-Befehl aus**:
+   ```bash
+   git revert <commit-id>
+   ```
+
+   Dies erstellt einen neuen Commit, der die Änderungen des angegebenen Commits rückgängig macht.
+
+### Zusammenfassung
+
+- **`git checkout <commit-id>`**: Wechselt zu einem älteren Commit, ohne den Verlauf zu ändern (Detached HEAD).
+- **`git reset --hard <commit-id>`**: Setzt den aktuellen Branch auf einen älteren Commit zurück und verwirft alle Änderungen nach diesem Commit.
+- **`git revert <commit-id>`**: Erstellt einen neuen Commit, der die Änderungen eines spezifischen Commits rückgängig macht.
+
+Wähle die Methode, die am besten zu deinem Anwendungsfall passt. Wenn du noch Fragen hast, lass es mich wissen!
+
+Microsoft SQL Server
+
+CREATE TABLE [Pro-Natur Test DB].[dbo].Produke (
+	Id int PRIMARY KEY,
+	ProduktName varchar(50),
+	Marke varchar(50),
+	Kategorie varchar(50),
+	Preis float
+)
+
+[dbo] = Das Kürzel [dbo] steht für das "Database Owner"-Schema in SQL-Server-Datenbanken. Es ist das Standardschema, das häufig verwendet wird, wenn keine anderen Schemas definiert sind. Jedes Objekt, das unter dem Schema [dbo] erstellt wird, gehört standardmäßig dem Benutzer, der die Datenbank besitzt, also dem Datenbankbesitzer
+
+20 most commonly used SQL commands, categorized by their functionality:
+
+### Data Query Commands
+1. **SELECT**: Retrieve data from one or more tables.
+   ```sql
+   SELECT column1, column2 FROM table_name;
+   ```
+
+2. **FROM**: Specify the table from which to retrieve the data.
+
+3. **WHERE**: Filter records based on specified conditions.
+   ```sql
+   SELECT * FROM table_name WHERE condition;
+   ```
+
+4. **ORDER BY**: Sort the result set in ascending or descending order.
+   ```sql
+   SELECT * FROM table_name ORDER BY column_name ASC|DESC;
+   ```
+
+5. **GROUP BY**: Group rows sharing a property to aggregate data.
+   ```sql
+   SELECT column1, COUNT(*) FROM table_name GROUP BY column1;
+   ```
+
+6. **HAVING**: Filter records after aggregation (used with GROUP BY).
+   ```sql
+   SELECT column1, COUNT(*) FROM table_name GROUP BY column1 HAVING COUNT(*) > 1;
+   ```
+
+### Data Manipulation Commands
+7. **INSERT**: Add new records to a table.
+   ```sql
+   INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+   ```
+
+8. **UPDATE**: Modify existing records in a table.
+   ```sql
+   UPDATE table_name SET column1 = value1 WHERE condition;
+   ```
+
+9. **DELETE**: Remove records from a table.
+   ```sql
+   DELETE FROM table_name WHERE condition;
+   ```
+
+### Data Definition Commands
+10. **CREATE TABLE**: Create a new table in the database.
+    ```sql
+    CREATE TABLE table_name (column1 datatype, column2 datatype);
+    ```
+
+11. **ALTER TABLE**: Modify an existing table (add, drop, or modify columns).
+    ```sql
+    ALTER TABLE table_name ADD column_name datatype;
+    ```
+
+12. **DROP TABLE**: Delete an existing table and all its data.
+    ```sql
+    DROP TABLE table_name;
+    ```
+
+### Data Control Commands
+13. **GRANT**: Give users access privileges to database objects.
+    ```sql
+    GRANT SELECT ON table_name TO user_name;
+    ```
+
+14. **REVOKE**: Remove access privileges from users.
+    ```sql
+    REVOKE SELECT ON table_name FROM user_name;
+    ```
+
+### Transaction Control Commands
+15. **BEGIN TRANSACTION**: Start a transaction.
+    ```sql
+    BEGIN TRANSACTION;
+    ```
+
+16. **COMMIT**: Save all changes made during the transaction.
+    ```sql
+    COMMIT;
+    ```
+
+17. **ROLLBACK**: Undo changes made during the transaction.
+    ```sql
+    ROLLBACK;
+    ```
+
+### Utility Commands
+18. **EXPLAIN**: Get a query execution plan to understand performance.
+    ```sql
+    EXPLAIN SELECT * FROM table_name;
+    ```
+
+19. **SHOW TABLES**: List all tables in the current database.
+    ```sql
+    SHOW TABLES;
+    ```
+
+20. **DESCRIBE**: Get information about a table's structure.
+    ```sql
+    DESCRIBE table_name;
+    ```
+
+These commands form the backbone of SQL operations, allowing users to manage and manipulate data in relational databases efficiently.
+
+
+
+
+
+
+
+
+
